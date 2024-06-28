@@ -1,4 +1,4 @@
-module github.com/cgrates/rpcclient
+module github.com/gezimbll/rpcclient
 
 go 1.20
 
