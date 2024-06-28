@@ -4,3 +4,5 @@ github.com/cenkalti/hub v1.0.1 h1:UMtjc6dHSaOQTO15SVA50MBIR9zQwvsukQupDrkIRtg=
 github.com/cenkalti/hub v1.0.1/go.mod h1:tcYwtS3a2d9NO/0xDXVJWx3IedurUjYCqFCmpi0lpHs=
 github.com/cgrates/birpc v1.3.1-0.20211117095917-5b0ff29f3084 h1:YIEepjEOjeHaFrewWaar/JkXYiDgO7gRw/R1zWITxEw=
 github.com/cgrates/birpc v1.3.1-0.20211117095917-5b0ff29f3084/go.mod h1:z/PmNnDPqSQALedKJv5T8+eXIq6XHa9J0St1YsvAVns=
+github.com/gezimbll/msgpack/codec v0.0.0-20240628083639-25e9edf671d0 h1:gtNYEVCV8AVQ5vu0v7lNMcWm9ynNNefuX2cdXs5+F+c=
+github.com/gezimbll/msgpack/codec v0.0.0-20240628083639-25e9edf671d0/go.mod h1:jXoYJrHepXlXIRDlwrRpUJSwCrYs4kfEJsNrUVrbivI=

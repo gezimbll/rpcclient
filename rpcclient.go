@@ -40,6 +40,7 @@ import (
 	"github.com/cgrates/birpc"
 	"github.com/cgrates/birpc/context"
 	"github.com/cgrates/birpc/jsonrpc"
+	"github.com/gezimbll/msgpack/codec"
 )
 
 // Constants to define the codec for RpcClient
@@ -258,7 +259,9 @@ func (client *RPCClient) connect(ctx *context.Context) (err error) {
 	case JSONrpc:
 		newClient = func(conn io.ReadWriteCloser) birpc.ClientConnector { return jsonrpc.NewClient(conn) }
 	case GOBrpc:
-		newClient = func(conn io.ReadWriteCloser) birpc.ClientConnector { return birpc.NewClient(conn) }
+		newClient = func(conn io.ReadWriteCloser) birpc.ClientConnector {
+			return birpc.NewClientWithCodec(codec.NewMsgPackClientCodec(conn))
+		}
 	case BiRPCInternal:
 		if client.connection != nil {
 			return
@@ -281,7 +284,7 @@ func (client *RPCClient) connect(ctx *context.Context) (err error) {
 		}
 	case BiRPCGOB:
 		newClient = func(conn io.ReadWriteCloser) birpc.ClientConnector {
-			c := birpc.NewBirpcClient(conn)
+			c := birpc.NewBirpcClientWithCodec(codec.NewMsgPackBirpcCodec(conn))
 			c.Register(client.biRPCClient)
 			return c
 		}
